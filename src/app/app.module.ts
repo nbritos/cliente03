@@ -10,6 +10,9 @@ import { VistaComponent } from './components/vista/vista.component';
 import { UsuariosIngresarComponent } from './components/usuarios-ingresar/usuarios-ingresar.component';
 import { UsuariosService } from './services/usuarios.service';
 import { FormsModule } from '@angular/forms';
+import { UsuariosPrincipalComponent } from './components/usuarios-principal/usuarios-principal.component';
+import { UsuariosHomeComponent } from './components/usuarios-home/usuarios-home.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,17 @@ import { FormsModule } from '@angular/forms';
     UsuariosRegistrarComponent,
     UsuariosListarComponent,
     VistaComponent,
-    UsuariosIngresarComponent
+    UsuariosIngresarComponent,
+    UsuariosPrincipalComponent,
+    UsuariosHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    
   ],
-  providers: [UsuariosService ],
+  providers: [UsuariosService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
